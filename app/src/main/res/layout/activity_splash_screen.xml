@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/holo_blue_bright"
+    tools:context="com.kony.nativewidgets.SplashScreenActivity">
+    
+    <!--<VideoView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/videoView"/>-->
+    <TextView
+        android:id="@+id/tv_splashtext"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="40dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Native Widgets"
+        android:textColor="@color/white" />
+</FrameLayout>

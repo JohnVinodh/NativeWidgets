@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.kony.nativewidgets.ImageWidgetActivity">
+
+        <EditText
+            android:id="@+id/ed_imageurl"
+            android:layout_height="wrap_content"
+            android:hint="Enter URL of the image"
+            android:text="https://d1e4pidl3fu268.cloudfront.net/66963e4a-ccba-4fdd-ba18-d5862fb4dba7/test.png"
+            android:layout_width="wrap_content">
+        </EditText>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Load Image"
+            android:textColor="@android:color/white"
+            android:background="@drawable/rounded_corners"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="onBtnLoadImageClick"
+            android:id="@+id/btn_LoadImage"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/billpayment"
+        android:id="@+id/imgBillPayment"
+
+        />
+
+</LinearLayout>

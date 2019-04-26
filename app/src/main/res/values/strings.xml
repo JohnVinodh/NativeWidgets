@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">NativeWidgets</string>
+    <string name="title_activity_toggle_button">ToggleButtonActivity</string>
+
+    <string-array name="mobile_operating_systems_array">
+        <item>Android</item>
+        <item>iOS</item>
+        <item>Windows</item>
+        <item>Blackberry</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="tvmail">Mail to Link Click here <a href="mailto:johnvinodh.talluri@kony.com?Subject=Test%20mail" target="_top">johnvinodh.talluri@kony.com</a></string>
+
+    <string name="tvDefaultLink"> Default Link \n<a href="http://docs.kony.com/konylibrary/visualizer/viz_widget_prog_guide/Default.htm">http://docs.kony.com/konylibrary/visualizer/viz_widget_prog_guide/Default.htm</a></string>
+    <string name="browserURL">http://docs.google.com/gview?embedded=true</string>
+    <string name="google_maps_key">AIzaSyDC5T76CmnIL2tjgdV2RIuUMVFYuB_BkIc</string>
+    <string name="kony_listbox_custom_view">Kony ListBox/Custom View</string>
+    <string name="open_accessibility_test_activity">Open Accessibility Test Activity</string>
+    <string name="problem_type">Problem Type</string>
+    <string name="open_kony_list_box">Open Kony List Box</string>
+    <string name="comment">Comment</string>
+    <string name="enter_your_username">Enter your username</string>
+    <string name="submit">Submit</string>
+</resources>
