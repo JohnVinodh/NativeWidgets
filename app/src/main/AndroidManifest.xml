@@ -161,7 +161,7 @@
         <activity android:name=".ImageCaptureActivity" />
         <activity android:name=".KonyListBoxActivity" />
         <activity android:name=".AccessiblityTestActivity"></activity>
-
+        <activity android:name=".FileChoooserActivity"></activity>
     </application>
 
 </manifest>
