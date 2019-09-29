@@ -216,6 +216,33 @@
             android:background="@drawable/rounded_corners"
             android:onClick="onBtnOpenAccessbilityActivityClick"
             android:id="@+id/btn_accessibility_test"/>
+        <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Open Facebook page click"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_corners"
+        android:onClick="onBtnOpenFacebookPageClick"
+        android:id="@+id/btn_open_fb_page"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Open FileChooser"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/rounded_corners"
+            android:onClick="onBtnOpenFileChooserClick"
+            android:id="@+id/btn_open_file_chooser"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="EditText here"
+            android:labelFor="@id/btn_accessibility_test"/>
         <!--<TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
