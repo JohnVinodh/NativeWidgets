@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,7 @@ public class BasicWidgetsActivity extends AppCompatActivity {
     EditText edServiceURL=null;
     private String LOG_TAG="Kony";
     Button mButtonActivity = null;
+    private static int PICKFILE_RESULT_CODE = 100;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -192,6 +194,55 @@ public class BasicWidgetsActivity extends AppCompatActivity {
 
     public void onBtnOpenAccessbilityActivityClick(View view) {
        mIntent = new Intent(getApplicationContext(),AccessiblityTestActivity.class);
+        startActivityForResult(mIntent,PICKFILE_RESULT_CODE);
+    }
+
+    public void onBtnOpenFileChooserClick(View view) {
+        mIntent = new Intent(getApplicationContext(),FileChoooserActivity.class);
         startActivity(mIntent);
+    }
+    public void onBtnOpenFacebookPageClick(View view) {
+        String facebookPageID = "Selective";
+
+
+        String facebookUrl = "https://www.facebook.com/" + facebookPageID;
+
+
+        String facebookUrlScheme = "fb://page/" + facebookPageID;
+
+        try {
+
+            int versionCode = getPackageManager().getPackageInfo("com.facebook.katana", 0).versionCode;
+
+            if (versionCode >= 3002850) {
+
+                Uri uri = Uri.parse("fb://facewebmodal/f?href=" + facebookUrl);
+                startActivity(new Intent(Intent.ACTION_VIEW, uri));
+            } else {
+
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(facebookUrlScheme)));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            // Facebookアプリがインストールされていない場合は、ブラウザで開く
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(facebookUrl)));
+
+        }
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode ==PICKFILE_RESULT_CODE) {
+            try {
+                Log.i("FileChooserUtil", "RESULT_PAGE Output");
+                String base64Data = data.getStringExtra("RESULT_PAGE");
+                String format = data.getStringExtra("RESULT_PAGE_TYPE");
+                //String base64Data = Base64.encodeToString(bout.toByteArray(), Base64.DEFAULT);
+                Log.i("JohnVinodh","base64Data ::"+base64Data+" ::format ::"+format);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

@@ -23,7 +23,7 @@ public class BrowserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browser);
         mEditText = (EditText) findViewById(R.id.ed_url);
-        mEditText.setText("https://www.ultratechaccess.com/UTCLInfo/salesTrend?CNo=620221S043"); //http://docs.google.com/gview?embedded=true&url=file:///android_asset/DailyStatus.docx
+        mEditText.setText("https://www.missionfed.com/rates?mobileview=1"); //http://docs.google.com/gview?embedded=true&url=file:///android_asset/DailyStatus.docx
         //gdocs https://docs.google.com/gview?url=http://www.dbs.com.hk/iwov-resources/pdf/en/terms.pdf&embedded=true
     }
 
@@ -38,6 +38,7 @@ public class BrowserActivity extends AppCompatActivity {
     public void onBtnDynamicContentBrowserClick(View v) {
         mIntent = new Intent(getApplicationContext(),WebViewActivity.class);
         mIntent.putExtra("ContentType","DynamicContent");
+        mIntent.putExtra("URL", "https://www.missionfed.com/rates?mobileview=1");
         startActivity(mIntent);
     }
 

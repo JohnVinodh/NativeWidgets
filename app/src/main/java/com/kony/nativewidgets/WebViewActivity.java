@@ -59,15 +59,16 @@ public class WebViewActivity extends AppCompatActivity {
             url = extras.getString("URL");
             loadWebView(value);
         }
+        //loadWebView("https://www.missionfed.com/rates?mobileview=1");
     }
 
     private void loadWebView(String value) {
         if(value.equalsIgnoreCase("StaticContent")) {
             mWebView.loadUrl("file:///android_asset/test.html");
-            //Toast.makeText(getApplicationContext(),"Static Content it is",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Static Content it is",Toast.LENGTH_LONG).show();
         } else if(value.equalsIgnoreCase("DynamicContent")) {
-           // Toast.makeText(getApplicationContext(),"Dynamic Content it is",Toast.LENGTH_LONG).show();
-            mWebView.loadUrl("https://www.ultratechaccess.com/UTCLInfo/salesTrend?CNo=620221S043");//http://10.10.3.98:8080/neo/ModifyCustomerDSD-StartPage.htm");
+            Toast.makeText(getApplicationContext(),"Dynamic Content it is",Toast.LENGTH_LONG).show();
+            //mWebView.loadUrl("https://www.missionfed.com/rates?mobileview=1");//http://10.10.3.98:8080/neo/ModifyCustomerDSD-StartPage.htm");
             //https://uattmbbank.tau2904.com/dev/page/view/webview-tmb-business-touch.html?mib_view
             mWebView.loadUrl(url);
         }

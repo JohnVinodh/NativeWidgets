@@ -43,19 +43,19 @@ public class LauncherActivity extends AppCompatActivity {
        ConstraintLayout constraintLayout =  (ConstraintLayout) findViewById(R.id.activity_launcher);
         /*getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
                 WindowManager.LayoutParams.FLAG_SECURE);*/
-        toolbar = new Toolbar(LauncherActivity.this);
+        //toolbar = new Toolbar(LauncherActivity.this);
         LinearLayout.LayoutParams toolBarParams = new LinearLayout.LayoutParams(
                 Toolbar.LayoutParams.MATCH_PARENT,
                 150
         ); //getActionBarHeight(getApplicationContext())
-        toolbar.setLayoutParams(toolBarParams);
-        toolbar.setBackgroundColor(Color.BLUE);
-        toolbar.setTitle("NativeWidgets");
-        toolbar.setTitleTextColor(Color.WHITE);
-        toolbar.setVisibility(View.VISIBLE);
+        //toolbar.setLayoutParams(toolBarParams);
+        //toolbar.setBackgroundColor(Color.BLUE);
+        //toolbar.setTitle("NativeWidgets");
+        //toolbar.setTitleTextColor(Color.WHITE);
+        //toolbar.setVisibility(View.VISIBLE);
 
-        constraintLayout.addView(toolbar,0);
-        this.setSupportActionBar(toolbar);
+        //constraintLayout.addView(toolbar,0);
+        //this.setSupportActionBar(toolbar);
         //this.getSupportActionBar().show();
 
         //getSupportActionBar() is getting null when we call this before setSupportActionBar(toolbar);
