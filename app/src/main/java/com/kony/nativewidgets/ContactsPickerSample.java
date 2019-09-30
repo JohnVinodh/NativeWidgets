@@ -1,9 +1,8 @@
 package com.kony.nativewidgets;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ContactsPickerSample extends AppCompatActivity {
+public class ContactsPickerSample extends BaseAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

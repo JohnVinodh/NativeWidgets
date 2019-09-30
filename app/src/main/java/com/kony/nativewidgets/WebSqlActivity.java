@@ -1,15 +1,13 @@
 package com.kony.nativewidgets;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebStorage;
 import android.webkit.WebView;
 import android.widget.Toast;
 
-public class WebSqlActivity extends AppCompatActivity {
+public class WebSqlActivity extends BaseAppCompatActivity {
 
     WebView webView = null;
 

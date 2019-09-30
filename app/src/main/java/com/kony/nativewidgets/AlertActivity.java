@@ -1,17 +1,15 @@
 package com.kony.nativewidgets;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 /**
  * Created by KH2195 on 1/23/2017.
  */
-public class AlertActivity extends AppCompatActivity {
+public class AlertActivity extends BaseAppCompatActivity {
     String message = "Hi Kony WelcometoKonyLabsHyderabadAndhraPradeshJohnhereTest";
     @Override
     protected void onCreate(Bundle savedInstanceState) {

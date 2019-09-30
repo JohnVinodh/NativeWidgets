@@ -15,7 +15,7 @@ import android.widget.Toast;
 /**
  * Created by KH2195 on 10/12/2016.
  */
-public class WebViewActivity extends AppCompatActivity {
+public class WebViewActivity extends BaseAppCompatActivity {
 
     WebView mWebView = null;
     String url = null;

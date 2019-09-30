@@ -1,37 +1,29 @@
 package com.kony.nativewidgets;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
-import android.content.res.Configuration;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kony.nativewidgets.utilities.HTTPAsyncTask;
-import com.kony.nativewidgets.utilities.Utils;
-
-import org.w3c.dom.Text;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.util.concurrent.ExecutionException;
 
-public class LauncherActivity extends AppCompatActivity {
+public class LauncherActivity extends BaseAppCompatActivity {
 
     TextView mTextViewMD5Info = null;
     TextView mTextViewDeviceName= null;

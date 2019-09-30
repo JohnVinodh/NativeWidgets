@@ -4,19 +4,15 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class KonyListBoxActivity extends AppCompatActivity {
+public class KonyListBoxActivity extends BaseAppCompatActivity {
 
     ListView dialog_ListView;
     private LinearLayout.LayoutParams layoutparams = null;

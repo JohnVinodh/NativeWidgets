@@ -1,10 +1,7 @@
 package com.kony.nativewidgets;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -16,7 +13,7 @@ import com.kony.nativewidgets.utilities.ImageLoadTask;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class ImageWidgetActivity extends AppCompatActivity implements AsyncTaskCompleted {
+public class ImageWidgetActivity extends BaseAppCompatActivity implements AsyncTaskCompleted {
 
     ImageView mIVImgBillPayment = null;
     EditText mEdImageURL = null;

@@ -1,20 +1,12 @@
 package com.kony.nativewidgets;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
-import java.net.URL;
-
-public class BrowserActivity extends AppCompatActivity {
+public class BrowserActivity extends BaseAppCompatActivity {
     private String LOG_TAG="Kony";
     Intent mIntent = null;
     EditText mEditText = null;

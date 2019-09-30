@@ -161,7 +161,16 @@
         <activity android:name=".ImageCaptureActivity" />
         <activity android:name=".KonyListBoxActivity" />
         <activity android:name=".AccessiblityTestActivity"></activity>
-        <activity android:name=".FileChoooserActivity"></activity>
+        <activity android:name=".FileChooserActivity"></activity>
+<!--        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>-->
     </application>
 
 </manifest>

@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by KH2195 on 10/12/2016.
  */
-public class SpinnerActivity extends AppCompatActivity {
+public class SpinnerActivity extends BaseAppCompatActivity {
 
     Spinner mSpinner = null;
     @Override

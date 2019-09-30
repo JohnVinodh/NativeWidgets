@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CalendarView;
 
-public class CalendarActivity extends AppCompatActivity {
+public class CalendarActivity extends BaseAppCompatActivity {
 
     CalendarView mCalendarView = null;
     @Override

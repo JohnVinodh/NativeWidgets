@@ -14,7 +14,7 @@ import android.widget.Toast;
 /**
  * Created by KH2195 on 10/5/2016.
  */
-public class EditTextActivity extends AppCompatActivity implements TextWatcher {
+public class EditTextActivity extends BaseAppCompatActivity implements TextWatcher {
 
     EditText mEditText = null;
     TextView mTextView = null;

@@ -1,9 +1,8 @@
 package com.kony.nativewidgets;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ImageCaptureActivity extends AppCompatActivity {
+public class ImageCaptureActivity extends BaseAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

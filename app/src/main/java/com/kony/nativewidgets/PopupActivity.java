@@ -1,17 +1,9 @@
 package com.kony.nativewidgets;
 
-import android.app.Activity;
-import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.PopupWindow;
 
-public class PopupActivity extends AppCompatActivity {
+public class PopupActivity extends BaseAppCompatActivity {
 
     CustomPopupWindow cPopupWindow;
 

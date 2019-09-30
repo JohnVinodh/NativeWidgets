@@ -1,20 +1,14 @@
 package com.kony.nativewidgets;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
-import android.app.DatePickerDialog;
 import android.app.DialogFragment;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Calendar;
-
-public class PickersActivity extends AppCompatActivity {
+public class PickersActivity extends BaseAppCompatActivity {
     static TextView tvPickers;
     static Button btnDatePicker;
     static int selectedDay;

@@ -3,13 +3,12 @@ package com.kony.nativewidgets;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
 /**
  * Created by KH2195 on 30-May-18.
  */
 
-public class CurrentLocationActivity extends AppCompatActivity{
+public class CurrentLocationActivity extends BaseAppCompatActivity{
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {

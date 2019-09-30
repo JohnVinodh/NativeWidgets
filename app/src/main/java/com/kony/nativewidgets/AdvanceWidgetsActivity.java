@@ -11,7 +11,7 @@ import android.widget.Toast;
 /**
  * Created by KH2195 on 10/12/2016.
  */
-public class AdvanceWidgetsActivity extends AppCompatActivity {
+public class AdvanceWidgetsActivity extends BaseAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

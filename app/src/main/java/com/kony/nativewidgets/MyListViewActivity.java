@@ -1,11 +1,8 @@
 package com.kony.nativewidgets;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,7 +16,7 @@ import java.util.List;
  * Created by KH2195 on 09-May-17.
  */
 
-public class MyListViewActivity extends AppCompatActivity {
+public class MyListViewActivity extends BaseAppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

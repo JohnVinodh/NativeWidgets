@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 /**
  * Created by KH2195 on 10/4/2016.
  */
-public class ButtonActivity extends AppCompatActivity {
+public class ButtonActivity extends BaseAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,6 +1,6 @@
 package com.kony.nativewidgets;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -198,8 +198,8 @@ public class BasicWidgetsActivity extends AppCompatActivity {
     }
 
     public void onBtnOpenFileChooserClick(View view) {
-        mIntent = new Intent(getApplicationContext(),FileChoooserActivity.class);
-        startActivity(mIntent);
+        mIntent = new Intent(getApplicationContext(), FileChooserActivity.class);
+        startActivityForResult(mIntent,PICKFILE_RESULT_CODE);
     }
     public void onBtnOpenFacebookPageClick(View view) {
         String facebookPageID = "Selective";
@@ -223,8 +223,7 @@ public class BasicWidgetsActivity extends AppCompatActivity {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(facebookUrlScheme)));
             }
         } catch (PackageManager.NameNotFoundException e) {
-            // Facebookアプリがインストールされていない場合は、ブラウザで開く
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(facebookUrl)));
+               startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(facebookUrl)));
 
         }
     }
@@ -236,13 +235,20 @@ public class BasicWidgetsActivity extends AppCompatActivity {
         if(requestCode ==PICKFILE_RESULT_CODE) {
             try {
                 Log.i("FileChooserUtil", "RESULT_PAGE Output");
-                String base64Data = data.getStringExtra("RESULT_PAGE");
-                String format = data.getStringExtra("RESULT_PAGE_TYPE");
-                //String base64Data = Base64.encodeToString(bout.toByteArray(), Base64.DEFAULT);
-                Log.i("JohnVinodh","base64Data ::"+base64Data+" ::format ::"+format);
+                if(data !=null) {
+                    String base64Data = data.getStringExtra("RESULT_PAGE");
+                    String format = data.getStringExtra("RESULT_PAGE_TYPE");
+                    //String base64Data = Base64.encodeToString(bout.toByteArray(), Base64.DEFAULT);
+                    Log.i("JohnVinodh", "base64Data ::" + base64Data + " ::format ::" + format);
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(newBase);
     }
 }

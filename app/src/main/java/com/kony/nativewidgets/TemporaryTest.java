@@ -1,8 +1,6 @@
 package com.kony.nativewidgets;
 
-import android.app.Activity;
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.method.HideReturnsTransformationMethod;
@@ -11,9 +9,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-public class TemporaryTest extends AppCompatActivity {
+public class TemporaryTest extends BaseAppCompatActivity {
 
     EditText mEditText;
     Button mButton;

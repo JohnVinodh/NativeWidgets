@@ -1,10 +1,8 @@
 package com.kony.nativewidgets;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
-public class TableLayoutActivity extends AppCompatActivity {
+public class TableLayoutActivity extends BaseAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

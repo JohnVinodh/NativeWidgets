@@ -1,20 +1,17 @@
 package com.kony.nativewidgets;
 
-        import android.app.Activity;
-        import android.app.NotificationManager;
-        import android.app.PendingIntent;
-        import android.content.Intent;
-        import android.graphics.BitmapFactory;
-        import android.net.Uri;
-        import android.os.Bundle;
-        import android.support.v4.app.NotificationCompat;
-        import android.support.v7.app.AppCompatActivity;
-        import android.view.View;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
+import android.view.View;
 
 /**
  * The entry point to the BasicNotification sample.
  */
-public class CustomPushNotificationActivity extends AppCompatActivity {
+public class CustomPushNotificationActivity extends BaseAppCompatActivity {
     /**
      * A numeric value that identifies the notification that we'll be sending.
      * This value needs to be unique within this app, but it doesn't need to be

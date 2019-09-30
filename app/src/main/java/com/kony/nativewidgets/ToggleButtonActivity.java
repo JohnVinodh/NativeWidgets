@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-public class ToggleButtonActivity extends AppCompatActivity {
+public class ToggleButtonActivity extends BaseAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

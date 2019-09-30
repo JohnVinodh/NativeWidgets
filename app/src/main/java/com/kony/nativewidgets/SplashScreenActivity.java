@@ -1,21 +1,11 @@
 package com.kony.nativewidgets;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.telephony.TelephonyManager;
-import android.widget.Toast;
 import android.widget.VideoView;
 
-import com.kony.nativewidgets.utilities.Utils;
-
-public class SplashScreenActivity extends AppCompatActivity {
+public class SplashScreenActivity extends BaseAppCompatActivity {
 
     VideoView videoView;
     private static int SPLASH_TIME_OUT = 3000;
