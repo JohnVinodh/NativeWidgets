@@ -48,4 +48,9 @@ public class ImageWidgetActivity extends BaseAppCompatActivity implements AsyncT
     public void onTaskCompleted(Bitmap bitmap) {
         mIVImgBillPayment.setImageBitmap(bitmap);
     }
+
+    @Override
+    public void onTaskCompleted(String result) {
+
+    }
 }

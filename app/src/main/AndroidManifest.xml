@@ -12,7 +12,8 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WRITE_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
 
     <application
         android:name="com.kony.MyApplication"
@@ -32,7 +33,9 @@
         <activity android:name=".CalendarActivity" />
         <activity android:name=".ToggleButtonActivity" />
         <activity android:name=".SpinnerActivity" />
-        <activity android:name=".WebViewActivity" android:launchMode="singleTask"/>
+        <activity
+            android:name=".WebViewActivity"
+            android:launchMode="singleTask" />
         <activity
             android:name=".LauncherActivity"
             android:exported="false">
@@ -45,15 +48,17 @@
              </intent-filter>-->
 
         </activity>
-        <activity android:name=".BrowserActivity" android:launchMode="singleTask"/>
+        <activity
+            android:name=".BrowserActivity"
+            android:launchMode="singleTask" />
 
-            <!--
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <!--
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-            -->
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+        -->
 
 
         <!--
@@ -162,15 +167,17 @@
         <activity android:name=".KonyListBoxActivity" />
         <activity android:name=".AccessiblityTestActivity"></activity>
         <activity android:name=".FileChooserActivity"></activity>
-<!--        <provider
+
+        <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
-        </provider>-->
+                android:resource="@xml/paths" />
+        </provider>
+
     </application>
 
 </manifest>

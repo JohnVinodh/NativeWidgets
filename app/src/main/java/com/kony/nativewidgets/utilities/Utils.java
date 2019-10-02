@@ -4,13 +4,16 @@ package com.kony.nativewidgets.utilities;
  * Created by KH2195 on 10/4/2016.
  */
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -64,7 +67,7 @@ public class Utils {
         ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
 
         // this is storage overwritten on each iteration with bytes
-        int bufferSize = 1024;
+        int bufferSize = 4096;
         byte[] buffer = new byte[bufferSize];
 
         // we need to know how may bytes were read to write them to the byteBuffer
@@ -76,4 +79,22 @@ public class Utils {
         // and then we can return your byte array.
         return byteBuffer.toByteArray();
     }
+
+    public InputStream getInputStreamForVirtualFile(Uri uri, String mimeTypeFilter,Context context)
+            throws IOException {
+
+        ContentResolver resolver = context.getContentResolver();
+
+        String[] openableMimeTypes = resolver.getStreamTypes(uri, mimeTypeFilter);
+
+        if (openableMimeTypes == null ||
+                openableMimeTypes.length < 1) {
+            throw new FileNotFoundException();
+        }
+
+        return resolver
+                .openTypedAssetFileDescriptor(uri, openableMimeTypes[0], null)
+                .createInputStream();
+    }
+
 }

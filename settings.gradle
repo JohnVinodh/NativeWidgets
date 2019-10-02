@@ -1,1 +1,1 @@
-include ':app', ':konywidgets'
+include ':app', ':konywidgets', ':commons-io-2.6'

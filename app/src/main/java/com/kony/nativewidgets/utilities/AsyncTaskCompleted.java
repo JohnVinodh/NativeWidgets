@@ -8,4 +8,5 @@ import android.graphics.Bitmap;
 
 public interface AsyncTaskCompleted {
     void onTaskCompleted(Bitmap bitmap);
+    void onTaskCompleted(String result);
 }

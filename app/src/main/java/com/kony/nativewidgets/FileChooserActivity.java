@@ -2,20 +2,21 @@ package com.kony.nativewidgets;
 
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 
-import com.kony.nativewidgets.utilities.Utils;
+import com.kony.nativewidgets.utilities.InputStreamAsyncTask;
 
-import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.concurrent.ExecutionException;
 
 public class FileChooserActivity extends AppCompatActivity {
 
@@ -24,6 +25,7 @@ public class FileChooserActivity extends AppCompatActivity {
     private InputStream mInputStream = null;
     private byte[] mByteArray = null;
     private String mBase64Data="";
+    private  String pageType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +38,18 @@ public class FileChooserActivity extends AppCompatActivity {
     }
 
     public void doOpenFileChooser(String[] mimeTypes) {
-        Intent chooseFile = new Intent("android.intent.action.GET_CONTENT");
-        chooseFile.addCategory("android.intent.category.OPENABLE");
+        Intent chooseFile;
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            chooseFile = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+            chooseFile.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+            chooseFile.addFlags(Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
+        }else{
+            chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
+        }
+        chooseFile.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+        chooseFile.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        // = new Intent(Intent.ACTION_GET_CONTENT); //"android.intent.action.GET_CONTENT" Intent.ACTION_OPEN_DOCUMENT
+        //chooseFile.addCategory("android.intent.category.OPENABLE");
         if (Build.VERSION.SDK_INT >= 19) {
             chooseFile.setType(mimeTypes.length == 1 ? mimeTypes[0] : "*/*");
             if (mimeTypes.length > 0)
@@ -60,54 +72,52 @@ public class FileChooserActivity extends AppCompatActivity {
     {
         super.onActivityResult(requestCode, resultCode, data);
         if ((requestCode == PICKFILE_RESULT_CODE) && (resultCode == -1)) {
-            Uri content_describer = data.getData();
+            final int takeFlags = data.getFlags() & Intent.FLAG_GRANT_READ_URI_PERMISSION;
             ContentResolver cR = getContentResolver();
+            final Uri content_describer = data.getData();
+            //cR.takePersistableUriPermission(content_describer, takeFlags);
             MimeTypeMap mime = MimeTypeMap.getSingleton();
-            String pageType = mime.getExtensionFromMimeType(cR.getType(content_describer));
+            pageType = mime.getExtensionFromMimeType(cR.getType(content_describer));
 
             try {
+                InputStreamAsyncTask inputStreamAsyncTask = new InputStreamAsyncTask(FileChooserActivity.this);
+                mBase64Data = inputStreamAsyncTask.execute(content_describer).get();
+                Log.i("JohnVinodh","base64String from Asynctask"+mBase64Data);
 
-                mInputStream = getContentResolver().openInputStream(content_describer);
-                Runnable runnable = new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            mByteArray = Utils.convertInputStreamToByteArray(mInputStream);
-                            Log.i("JohnVinodh","FileChooser Activity byteArrayFromthread inside thread::"+mByteArray);
-                            mBase64Data = Base64.encodeToString(mByteArray, 0);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                };
-                new Thread(runnable).start();
-                /*int len = 0;
-                byte[] inBuff = new byte[2048];
-
-                while ((len = in.read(inBuff, 0, inBuff.length)) != -1)
-                    bout.write(inBuff, 0, len);*/
-            }
-            catch (Exception exception) {
-                Log.e("JohnVinodh", "Error Converting input stream to ByteArray"+exception.getMessage());
-                exception.printStackTrace();
-            } finally {
-                try {
-                    if (mInputStream != null)
-                        mInputStream.close();
-                }
-                catch (IOException localIOException2) {
-                }
+                setResultOfFilePicked(mBase64Data,pageType);
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
 
-            /*Intent intent = new Intent(getIntent().getAction());
-            intent.addFlags(-1);
-            intent.putExtra("RESULT_PAGE_TYPE", pageType);
-            intent.putExtra("RESULT_PAGE", mBase64Data);
-            setResult(100, intent);*/
-            finish();
             System.out.println("Finished process..");
         } else {
             onBackPressed();
         }
     }
+
+
+
+
+    private void setResultOfFilePicked(String result, String pageType) {
+        Intent intent;
+       /* if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+            intent.addFlags(Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
+        }else{
+            intent = new Intent(Intent.ACTION_GET_CONTENT);
+        }*/
+        intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        //intent.addFlags(-1);
+        intent.putExtra("RESULT_PAGE_TYPE", pageType);
+        BasicWidgetsActivity.mBase64String=result;
+        //intent.putExtra("RESULT_PAGE", result);
+        setResult(8595, intent);
+        finish();
+    }
+
 }

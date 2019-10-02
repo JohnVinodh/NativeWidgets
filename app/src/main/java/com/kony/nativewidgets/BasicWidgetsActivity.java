@@ -28,7 +28,8 @@ public class BasicWidgetsActivity extends AppCompatActivity {
     EditText edServiceURL=null;
     private String LOG_TAG="Kony";
     Button mButtonActivity = null;
-    private static int PICKFILE_RESULT_CODE = 100;
+    public static String mBase64String="";
+    private static int PICKFILE_RESULT_CODE = 8595;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -194,7 +195,7 @@ public class BasicWidgetsActivity extends AppCompatActivity {
 
     public void onBtnOpenAccessbilityActivityClick(View view) {
        mIntent = new Intent(getApplicationContext(),AccessiblityTestActivity.class);
-        startActivityForResult(mIntent,PICKFILE_RESULT_CODE);
+        startActivity(mIntent);
     }
 
     public void onBtnOpenFileChooserClick(View view) {
@@ -236,7 +237,7 @@ public class BasicWidgetsActivity extends AppCompatActivity {
             try {
                 Log.i("FileChooserUtil", "RESULT_PAGE Output");
                 if(data !=null) {
-                    String base64Data = data.getStringExtra("RESULT_PAGE");
+                    String base64Data = mBase64String;//data.getStringExtra("RESULT_PAGE");
                     String format = data.getStringExtra("RESULT_PAGE_TYPE");
                     //String base64Data = Base64.encodeToString(bout.toByteArray(), Base64.DEFAULT);
                     Log.i("JohnVinodh", "base64Data ::" + base64Data + " ::format ::" + format);

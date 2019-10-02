@@ -35,11 +35,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }*/
         debug {
-            minifyEnabled true
+            //minifyEnabled true
             //useProguard false
             //shrinkResources true
             debuggable true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
             minifyEnabled true
@@ -70,7 +70,10 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.google.android.gms:play-services-location:11.6.0'
+    //implementation group: 'com.google.guava', name: 'guava', version: '23.3'
+    //implementation 'com.google.guava:guava:23.3'
     testCompile 'junit:junit:4.12'
+    api project(path: ':commons-io-2.6')
 }
 allprojects {
     afterEvaluate {
