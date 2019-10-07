@@ -60,7 +60,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation 'com.android.support:appcompat-v7:28.0.0'
@@ -72,7 +72,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:11.6.0'
     //implementation group: 'com.google.guava', name: 'guava', version: '23.3'
     //implementation 'com.google.guava:guava:23.3'
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
     api project(path: ':commons-io-2.6')
 }
 allprojects {
