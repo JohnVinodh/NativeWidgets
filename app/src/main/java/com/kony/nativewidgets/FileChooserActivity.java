@@ -1,6 +1,7 @@
 package com.kony.nativewidgets;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -120,4 +121,8 @@ public class FileChooserActivity extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(newBase);
+    }
 }

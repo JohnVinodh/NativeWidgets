@@ -25,11 +25,15 @@ public class WebViewActivity extends BaseAppCompatActivity {
         super.onCreate(savedInstanceState);
         //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_webview);
+
         View decorView = getWindow().getDecorView();
 // Hide the status bar.
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
         mWebView = (WebView) findViewById(R.id.webview);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            mWebView.getSettings().setSafeBrowsingEnabled(false);
+        }
 
         WebSettings webViewSettings =  mWebView.getSettings();
         webViewSettings.setJavaScriptEnabled(true);
@@ -63,9 +67,13 @@ public class WebViewActivity extends BaseAppCompatActivity {
     }
 
     private void loadWebView(String value) {
+        String base64 = getString(R.string.base64pdf);
+       String browserString="<html>\n<body>\n<div id=\"pdf\" >\n<object data=\"data:application/pdf;base64,"+base64+"\""+"width=\"100%\" height=\"1000%\">\n</div>\n</body>\n</html>";
         if(value.equalsIgnoreCase("StaticContent")) {
-            mWebView.loadUrl("file:///android_asset/test.html");
-            Toast.makeText(getApplicationContext(),"Static Content it is",Toast.LENGTH_LONG).show();
+            mWebView.loadUrl("file:///android_asset/testpdf.html");
+            //mWebView.loadData(browserString,"text/html", "UTF-8");
+            //mWebView.loadDataWithBaseURL(null,browserString,"text/html","UTF-8",null);
+            //Toast.makeText(getApplicationContext(),"Static Content it is",Toast.LENGTH_LONG).show();
         } else if(value.equalsIgnoreCase("DynamicContent")) {
             Toast.makeText(getApplicationContext(),"Dynamic Content it is",Toast.LENGTH_LONG).show();
             //mWebView.loadUrl("https://www.missionfed.com/rates?mobileview=1");//http://10.10.3.98:8080/neo/ModifyCustomerDSD-StartPage.htm");
