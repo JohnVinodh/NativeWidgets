@@ -14,7 +14,7 @@
 
     <string name="tvDefaultLink"> Default Link \n<a href="http://docs.kony.com/konylibrary/visualizer/viz_widget_prog_guide/Default.htm">http://docs.kony.com/konylibrary/visualizer/viz_widget_prog_guide/Default.htm</a></string>
     <string name="browserURL">http://docs.google.com/gview?embedded=true</string>
-    <string name="google_maps_key">AIzaSyDC5T76CmnIL2tjgdV2RIuUMVFYuB_BkIc</string>
+    <string name="google_maps_key"></string>
     <string name="kony_listbox_custom_view">Kony ListBox/Custom View</string>
     <string name="open_accessibility_test_activity">Open Accessibility Test Activity</string>
     <string name="problem_type">Problem Type</string>
