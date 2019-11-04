@@ -1,12 +1,10 @@
 package com.kony.nativewidgets;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.TypedValue;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.View;
-import android.widget.Toast;
 
 /**
  * Created by KH2195 on 10/12/2016.
