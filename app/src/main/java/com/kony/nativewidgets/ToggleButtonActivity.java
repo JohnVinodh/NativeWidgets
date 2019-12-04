@@ -1,8 +1,8 @@
 package com.kony.nativewidgets;
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
@@ -14,7 +14,7 @@ public class ToggleButtonActivity extends BaseAppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_toggle_button);
+        //setContentView(R.activity_videoview.activity_toggle_button);
         ToggleButton toggle = new ToggleButton(ToggleButtonActivity.this);
         ViewGroup.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         LinearLayout layout = new LinearLayout(this);

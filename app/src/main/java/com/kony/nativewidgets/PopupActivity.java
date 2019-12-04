@@ -26,12 +26,12 @@ public class PopupActivity extends BaseAppCompatActivity {
             PopupWindow pwindo;
             LayoutInflater inflater = (LayoutInflater) PopupActivity.this
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View layout = inflater.inflate(R.layout.screen_popup,
+            View activity_videoview = inflater.inflate(R.activity_videoview.screen_popup,
                     (ViewGroup) findViewById(R.id.popup_element));
-            pwindo = new PopupWindow(layout, 300, 370, true);
-            pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);
+            pwindo = new PopupWindow(activity_videoview, 300, 370, true);
+            pwindo.showAtLocation(activity_videoview, Gravity.CENTER, 0, 0);
 
-            btnClosePopup = (Button) layout.findViewById(R.id.btn_close_popup);
+            btnClosePopup = (Button) activity_videoview.findViewById(R.id.btn_close_popup);
             btnClosePopup.setOnClickListener(cancel_button_click_listener);
 
         } catch (Exception e) {

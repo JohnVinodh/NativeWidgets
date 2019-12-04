@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.kony.nativewidgets">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,10 +17,12 @@
     <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
 
     <application
+
         android:name="com.kony.MyApplication"
         android:allowBackup="true"
         android:configChanges="fontScale"
         android:icon="@mipmap/ic_launcher"
+        tools:replace="android:theme"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
@@ -37,7 +40,7 @@
             android:name=".WebViewActivity"
             android:launchMode="singleTask" />
         <activity
-            android:name=".LauncherActivity"
+            android:name=".LauncherActivity" android:configChanges="locale|keyboardHidden|orientation|screenSize|screenLayout" android:screenOrientation="sensor"
             android:exported="false">
 
 
@@ -167,9 +170,9 @@
         <activity android:name=".KonyListBoxActivity" />
         <activity android:name=".AccessiblityTestActivity"></activity>
         <activity android:name=".FileChooserActivity"></activity>
-
+        <activity android:name=".VideoViewActivity"/>
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">

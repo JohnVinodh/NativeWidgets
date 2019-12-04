@@ -2,7 +2,7 @@ package com.kony.nativewidgets;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 /**
  * Created by KH2195 on 30-May-18.

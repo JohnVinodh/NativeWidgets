@@ -1,8 +1,7 @@
 package com.kony.nativewidgets;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -26,10 +25,10 @@ public class SpinnerActivity extends BaseAppCompatActivity {
         list.add("Spinner Data");
         list.add("Spinner Adapter");
         list.add("Spinner Example");
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,list);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.activity_videoview.simple_spinner_item,list);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.mobile_operating_systems_array, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
+// Specify the activity_videoview to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         mSpinner.setAdapter(adapter);

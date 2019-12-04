@@ -238,6 +238,17 @@
             android:background="@drawable/rounded_corners"
             android:onClick="onBtnOpenFileChooserClick"
             android:id="@+id/btn_open_file_chooser"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Open VideoView Activity"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/rounded_corners"
+            android:onClick="onBtnOpenVideoViewClick"
+            android:id="@+id/btn_open_videoview_activity"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
