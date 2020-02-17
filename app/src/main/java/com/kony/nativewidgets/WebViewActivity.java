@@ -1,6 +1,9 @@
 package com.kony.nativewidgets;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.MailTo;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.RequiresApi;
@@ -11,6 +14,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
+
+import java.util.Map;
 
 /**
  * Created by KH2195 on 10/12/2016.
@@ -50,10 +55,55 @@ public class WebViewActivity extends BaseAppCompatActivity {
                 Toast.makeText(activity, "Oh no! " + description, Toast.LENGTH_SHORT).show();
             }
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                if (url.startsWith("tel:")) {
+                    Intent tel = new Intent(Intent.ACTION_DIAL, Uri.parse(url));
+                    startActivity(tel);
+                    return true;
+                }
+                else if (url.contains("mailto:")) {
+                    /*view.getContext().startActivity(
+                            new Intent(Intent.ACTION_VIEW, Uri.parse(url)));*/
+                    MailTo mailTo = MailTo.parse(url);
 
-                view.loadUrl(url);
+                    Intent intent = new Intent(Intent.ACTION_SEND, Uri.parse(url));//new Intent(android.content.Intent.ACTION_SENDTO);
+                    intent.setType("text/plain");
 
-                return true;
+                    String to = mailTo.getTo();
+                    if(to != null)
+                    {
+                        intent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{to});
+                    }
+                    String subject = mailTo.getSubject();
+                    if(subject != null)
+                    {
+                        intent.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
+                    }
+
+                    String cc = mailTo.getCc();
+                    if(cc != null)
+                    {
+                        intent.putExtra(android.content.Intent.EXTRA_CC, new String[]{cc});
+                    }
+
+                    String body = mailTo.getBody();
+                    if(body != null)
+                    {
+                        intent.putExtra(android.content.Intent.EXTRA_TEXT, body);
+                    }
+
+                    Map<String,String> headers = mailTo.getHeaders();
+                    String bcc = headers.get("bcc");
+                    if(bcc != null)
+                    {
+                        intent.putExtra(android.content.Intent.EXTRA_BCC, new String[]{bcc});
+                    }
+                    view.getContext().startActivity(intent);
+                    return true;
+
+                }else {
+                    view.loadUrl(url);
+                    return true;
+                }
             }
         });
 

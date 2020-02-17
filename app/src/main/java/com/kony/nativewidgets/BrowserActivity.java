@@ -15,7 +15,7 @@ public class BrowserActivity extends BaseAppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browser);
         mEditText = (EditText) findViewById(R.id.ed_url);
-        mEditText.setText("https://www.missionfed.com/rates?mobileview=1"); //http://docs.google.com/gview?embedded=true&url=file:///android_asset/DailyStatus.docx
+        mEditText.setText("https://www.hackerrank.com/privacy");//https://www.sit.amway.in/mobileContactUs // https://www.missionfed.com/rates?mobileview=1 //http://docs.google.com/gview?embedded=true&url=file:///android_asset/DailyStatus.docx
         //gdocs https://docs.google.com/gview?url=http://www.dbs.com.hk/iwov-resources/pdf/en/terms.pdf&embedded=true
     }
 

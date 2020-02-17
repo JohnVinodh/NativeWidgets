@@ -37,6 +37,7 @@ public class HTTPAsyncTask extends AsyncTask<URL,Void,String> {
     protected String doInBackground(URL... urls) {
 
         try {
+
             mConnection = (HttpURLConnection)urls[0].openConnection();
             mConnection.setReadTimeout(60000);
             mConnection.setConnectTimeout(60000);

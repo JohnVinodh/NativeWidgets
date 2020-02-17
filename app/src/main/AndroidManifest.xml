@@ -38,7 +38,9 @@
         <activity android:name=".SpinnerActivity" />
         <activity
             android:name=".WebViewActivity"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTask" >
+
+        </activity>
         <activity
             android:name=".LauncherActivity" android:configChanges="locale|keyboardHidden|orientation|screenSize|screenLayout" android:screenOrientation="sensor"
             android:exported="false">
